@@ -20,7 +20,7 @@ var lat1 = point[1];
 var lon1 = point[0];
 
 var distances= Array.apply(null, Array[cities.length])
-
+var ausgabe = "";
 
 function calculateDistance(){
 
@@ -44,21 +44,21 @@ function calculateDistance(){
     
         distances[i] = d;
 
-        for(var j = 0; j < cities.length; j++){
-
-            console.log("Die Stadt ist " + distances[i] + " Meter von dem Punkt entfernt");
-
-        }
-
-        
     }
-    bubbleSort(distances);
 
-    for(var k = 0; k < cities.length; k++){
+bubbleSort(distances);
 
-        console.log("Die Stadt ist " + distances[k] + " Meter von dem Punkt entfernt");
+for(var k = 0; k < cities.length; k++){
 
-    }
+    console.log("Die Stadt ist " + distances[k] + " Meter von dem Punkt entfernt");
+
+}
+
+for(var i = 0; i < distances.length; i++) {
+
+ausgabe = ausgabe + distances[i] + "<br />";
+
+}
 
 }
 
@@ -77,9 +77,3 @@ let bubbleSort = (inputArr) => {
 };
 
 calculateDistance();
-
-
-
-
-
-
